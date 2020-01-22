@@ -1,0 +1,28 @@
+body, section {
+    background: #434343!important;
+}
+
+p, ul, ol, li, span {
+    color: #EEEEEE!important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+ul.unordered-list li:before {
+    border-color: #Fe2b2b;
+}
+
+.default-select ul, .default-select ul li, .default-select span {
+	color: black!important;
+}
+
+.single-input {
+	background: white;
+	color: black!important;
+}
+
+.single-input::placeholder {
+	color: #A0A0A0!important;
+}
