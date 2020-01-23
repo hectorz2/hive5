@@ -254,7 +254,7 @@ ul.unordered-list li:before {
 .btn-outline-primary:hover {
     background: #AF32FF;
     color: white;
-    border: none;
+    border-color: #AF32FF;
 }
 .btn-outline-primary:active {
     /* TODO */
@@ -282,7 +282,7 @@ ul.unordered-list li:before {
 .btn-outline-secondary:hover {
     background: #13FFD5;
     color: #444444;
-    border: none;
+    border-color: #13FFD5;
 }
 .btn-outline-secondary:active {
     /* TODO */
@@ -310,7 +310,7 @@ ul.unordered-list li:before {
 .btn-outline-success:hover {
     background: #A7F510;
     color: #444444;
-    border: none;
+    border-color: #A7F510;
 }
 .btn-outline-success:active {
     /* TODO */
@@ -337,7 +337,7 @@ ul.unordered-list li:before {
 .btn-outline-danger:hover {
     background: #FF3C80;
     color: white;
-    border: none;
+    border-color: #FF3C80;
 }
 .btn-outline-danger:active {
     /* TODO */
@@ -364,7 +364,7 @@ ul.unordered-list li:before {
 }
 .btn-outline-warning:hover {
     background: #FFEB00;
-    border: none;
+    border-color: #FFEB00;
     color: #444444;
 }
 .btn-outline-warning:active {
@@ -393,7 +393,7 @@ ul.unordered-list li:before {
 .btn-outline-info:hover {
     background: #0097CC;
     color: white;
-    border: none;
+    border-color: #0097CC;
 }
 .btn-outline-info:active {
     /* TODO */
@@ -420,6 +420,7 @@ ul.unordered-list li:before {
 .btn-outline-light:hover {
     background: white;
     color: #444444;
+    border-color: #FFFFFF;
 }
 .btn-outline-light:active {
     /* TODO */
