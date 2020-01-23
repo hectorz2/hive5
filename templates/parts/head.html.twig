@@ -7,7 +7,7 @@
 {#<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">#}
 <!-- Place favicon.ico in the root directory -->
 
-<!-- CSS here -->
+{# TEMPLATE #}
 <link rel="stylesheet" href="{{ asset('template/css/bootstrap.min.css') }}"/>
 <link rel="stylesheet" href="{{ asset('template/css/owl.carousel.min.css') }}"/>
 <link rel="stylesheet" href="{{ asset('template/css/magnific-popup.css') }}"/>
@@ -18,9 +18,21 @@
 <link rel="stylesheet" href="{{ asset('template/css/gijgo.css') }}"/>
 <link rel="stylesheet" href="{{ asset('template/css/animate.min.css') }}"/>
 <link rel="stylesheet" href="{{ asset('template/css/slicknav.css') }}"/>
+{# END TEMPLATE #}
 
-<link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
+{# PLUGINS #}
+<link rel="stylesheet" href="{{ asset('plugin/bootstrap-table-1.15.5/dist/bootstrap-table.min.css') }}"/>
+{# END PLUGINS#}
+
+{# TEMPLATE STYLE #}
+<link rel="stylesheet" href="{{ asset('template/css/style.css') }}"/>
 <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+{# END TEMPLATE STYLE #}
 
-<link rel="stylesheet" href="{{ asset('css/hive5style.css') }}">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{# HIVE5 STYLE #}
+<link rel="stylesheet" href="{{ asset('css/hive5style.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+{# END HIVE5 STYLE #}
+
+<script src="{{ asset('template/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+<script src="{{ asset('template/js/vendor/jquery-1.12.4.min.js') }}"></script>

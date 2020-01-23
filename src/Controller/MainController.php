@@ -10,8 +10,16 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="root")
      */
-    public function number()
+    public function root()
     {
         return $this->render('base.html.twig');
+    }
+
+    /**
+     * @Route("/elements", name="elements")
+     */
+    public function elements()
+    {
+        return $this->render('elements.html.twig');
     }
 }

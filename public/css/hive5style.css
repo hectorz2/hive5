@@ -6,12 +6,36 @@ p, ul, ol, li, span {
     color: #EEEEEE!important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: white;
+/*h1, h2, h3, h4, h5, h6 {*/
+/*    color: white;*/
+/*}*/
+
+h1 {
+    color: #13FFD5!important;
+}
+
+h2 {
+    color: #25E8E0!important;
+}
+
+h3 {
+    color: #46A2EB!important;
+}
+
+h4 {
+    color: #6C57F6!important;
+}
+
+h5 {
+    color: #9E3BFF!important;
+}
+
+h6 {
+    color: #AF32FF!important;
 }
 
 ul.unordered-list li:before {
-    border-color: #Fe2b2b;
+    border-color: #AF32FF;
 }
 
 .default-select ul, .default-select ul li, .default-select span {
@@ -26,3 +50,539 @@ ul.unordered-list li:before {
 .single-input::placeholder {
 	color: #A0A0A0!important;
 }
+
+.generic-blockquote {
+    border-left: 5px solid #AF32FF;
+}
+
+.dropdown-item, .dropdown-item span {
+    color: #444444!important;
+}
+
+/* TODO header */
+/* TODO all the placeholders */
+
+
+
+/* region *****BUTTONS***** */
+.btn {
+}
+.btn.disabled, .btn:disabled {
+}
+.btn:hover {
+}
+.btn:active {
+}
+.btn:focus {
+}
+
+.btn-primary {
+    background: #AF32FF;
+    color: white;
+    border: none;
+}
+.btn-primary.disabled, .btn-primary:disabled {
+    background: #B1C07D; /* TODO */
+}
+.btn-primary:hover {
+    background: #8BAC1A; /* TODO */
+}
+.btn-primary:active {
+    /* TODO */
+    background: #8BAC1A!important;
+    box-shadow: 0 0 1px 3px #C3D977!important;
+}
+.btn-primary:focus {
+    /* TODO */
+    background: #8BAC1A;
+    color: white;
+}
+
+.btn-secondary {
+    background: #13FFD5;
+    color: #444444;
+    border: none;
+}
+.btn-secondary.disabled, .btn-secondary:disabled {
+    /* TODO */
+}
+.btn-secondary:hover {
+    /* TODO */
+    background: #E1E1E1;
+}
+.btn-secondary:active {
+    /* TODO */
+    background: #E1E1E1!important;
+    box-shadow: 0 0 1px 3px #C3D977!important;
+}
+.btn-secondary:focus {
+    /* TODO */
+    background: #E1E1E1;
+    color: #212529;
+}
+
+.btn-success {
+    background: #A7F510;
+    color: #444444;
+    border: none;
+}
+.btn-success.disabled, .btn-success:disabled {
+    /* TODO */
+    background: #B1C07D;
+}
+.btn-success:hover {
+    /* TODO */
+    background: #8BAC1A;
+}
+.btn-success:active {
+    /* TODO */
+    background: #8BAC1A!important;
+    box-shadow: 0 0 1px 3px #C3D977!important;
+}
+.btn-success:focus {
+    /* TODO */
+    background: #8BAC1A;
+    color: white;
+}
+
+.btn-danger {
+    background: #FF3C80;
+    color: white;
+    border: none;
+}
+.btn-danger.disabled, .btn-danger:disabled {
+    /* TODO */
+    background: #CC7E86;
+}
+.btn-danger:hover {
+    /* TODO */
+    background: #C11628;
+}
+.btn-danger:active {
+    /* TODO */
+    background: #C11628!important;
+    box-shadow: 0 0 1px 3px #FFAAAA!important;
+}
+.btn-danger:focus {
+    /* TODO */
+    background: #C11628;
+    color: white;
+}
+
+.btn-warning {
+    background: #FFEB00;
+    border: none;
+    color: #444444;
+}
+.btn-warning.disabled, .btn-warning:disabled {
+    /* TODO */
+    background: #DBC075;
+}
+.btn-warning:hover {
+    /* TODO */
+    background: #DFA300;
+}
+.btn-warning:active {
+    /* TODO */
+    background: #DFA300!important;
+    box-shadow: 0 0 1px 3px #FBD366!important;
+}
+.btn-warning:focus {
+    /* TODO */
+    background: #DFA300;
+    color: white;
+}
+
+.btn-info {
+    background: #0097CC;
+    color: white;
+    border: none;
+}
+.btn-info.disabled, .btn-info:disabled {
+    /* TODO */
+    background: #A2C8DB;
+}
+.btn-info:hover {
+    /* TODO */
+    background: #50A3CD;
+}
+.btn-info:active {
+    /* TODO */
+    background: #50A3CD!important;
+    box-shadow: 0 0 1px 3px #9BD3EF!important;
+}
+.btn-info:focus {
+    /* TODO */
+    background: #50A3CD;
+    color: white;
+}
+
+.btn-light {
+    background: #FFFFFF;
+    border: none;
+    color: #444444;
+}
+.btn-light.disabled {
+}
+.btn-light:hover {
+}
+.btn-light:active {
+}
+
+.btn-dark {
+}
+.btn-dark.disabled {
+    /* TODO */
+}
+.btn-dark:hover {
+}
+.btn-dark:active {
+}
+
+
+.btn-outline-primary {
+    background: rgba(255, 255, 255, 0);
+    color: #AF32FF;
+    border-color: #AF32FF;
+}
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+    /* TODO */
+    background: rgba(255, 255, 255, 0);
+    color: #B1C07D;
+    border-color: #B1C07D;
+}
+.btn-outline-primary:hover {
+    background: #AF32FF;
+    color: white;
+    border: none;
+}
+.btn-outline-primary:active {
+    /* TODO */
+    background: #9bbf1d!important;
+    color: #ffffff;
+    box-shadow: 0 0 1px 3px #c4d59c!important;
+}
+.btn-outline-primary:focus {
+    /* TODO */
+    background: #9bbf1d;
+    color: white;
+}
+
+.btn-outline-secondary {
+    background: rgba(255, 255, 255, 0);
+    color: #13FFD5;
+    border-color: #13FFD5;
+}
+.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
+    /* TODO */
+    background: rgba(255, 255, 255, 0);
+    color: #d6d8d8;
+    border-color: #d6d8d8;
+}
+.btn-outline-secondary:hover {
+    background: #13FFD5;
+    color: #444444;
+    border: none;
+}
+.btn-outline-secondary:active {
+    /* TODO */
+    background: #d6d8d8!important;
+    color: #ffffff;
+    box-shadow: 0 0 1px 3px #fdfdfd!important;
+}
+.btn-outline-secondary:focus {
+    /* TODO */
+    background: #a1a1a1;
+    color: #383838;
+}
+
+.btn-outline-success {
+    background: rgba(255, 255, 255, 0);
+    color: #A7F510;
+    border-color: #A7F510;
+}
+.btn-outline-success.disabled, .btn-outline-success:disabled {
+    /* TODO */
+    background: rgba(255, 255, 255, 0);
+    color: #c3db7c;
+    border-color: #c3db7c
+}
+.btn-outline-success:hover {
+    background: #A7F510;
+    color: #444444;
+    border: none;
+}
+.btn-outline-success:active {
+    /* TODO */
+    background: #9bbf1d!important;
+    color: white;
+    box-shadow: 0 0 1px 3px #ccdfa0!important;
+}
+.btn-outline-success:focus {
+    /* TODO */
+    background: #9bbf1d;
+    color: white;
+}
+
+.btn-outline-danger {
+    background: rgba(255, 255, 255, 0);
+    color: #FF3C80;
+    border-color: #FF3C80;
+}
+.btn-outline-danger.disabled, .btn-outline-danger:disabled {
+    /* TODO */
+    color: #dfabb1;
+    background: #dfabb1;
+}
+.btn-outline-danger:hover {
+    background: #FF3C80;
+    color: white;
+    border: none;
+}
+.btn-outline-danger:active {
+    /* TODO */
+    background: #da0430!important;
+    color: white;
+    box-shadow: 0 0 1px 3px #ec8197!important;
+}
+.btn-outline-danger:focus {
+    /* TODO */
+    background: #da0430;
+    color: white;
+}
+
+.btn-outline-warning {
+    background: rgba(255, 255, 255, 0);
+    color: #FFEB00;
+    border-color: #FFEB00;
+}
+.btn-outline-warning.disabled, .btn-outline-warning:disabled {
+    /* TODO */
+    background: rgba(255, 255, 255, 0);
+    color: #f7c66f;
+    border-color: #f7c66f;
+}
+.btn-outline-warning:hover {
+    background: #FFEB00;
+    border: none;
+    color: #444444;
+}
+.btn-outline-warning:active {
+    /* TODO */
+    background: #f9b339!important;
+    color: white;
+    box-shadow: 0 0 1px 3px #fcd99c!important;
+}
+.btn-outline-warning:focus {
+    /* TODO */
+    background: #f9b339;
+    color: white;
+}
+
+.btn-outline-info {
+    background: rgba(255, 255, 255, 0);
+    color: #0097CC;
+    border-color: #0097CC;
+}
+.btn-outline-info.disabled, .btn-outline-info:disabled {
+    /* TODO */
+    background: rgba(255, 255, 255, 0);
+    color: #c2dce7;
+    border-color: #c2dce7
+}
+.btn-outline-info:hover {
+    background: #0097CC;
+    color: white;
+    border: none;
+}
+.btn-outline-info:active {
+    /* TODO */
+    background: #56b6e1!important;
+    color: white;
+    box-shadow: 0 0 1px 3px #aadaf0!important;
+}
+.btn-outline-info:focus {
+    /* TODO */
+    background: #56b6e1;
+    color: white;
+}
+
+.btn-outline-light {
+    background: rgba(255, 255, 255, 0);
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+.btn-outline-light.disabled .btn-outline-light:disabled {
+    background: rgba(255, 255, 255, 0);
+    color: #eeeeee;
+    border-color: #eeeeee
+}
+.btn-outline-light:hover {
+    background: white;
+    color: #444444;
+}
+.btn-outline-light:active {
+    /* TODO */
+    background: #a1a1a1!important;
+    color: #969696;
+    box-shadow: 0 0 1px 3px #eaebeb!important;
+}
+.btn-outline-light:focus {
+    /* TODO */
+    background: #a1a1a1;
+    color: #969696;
+}
+/* endregion END BUTTONS */
+
+/* region *****BACKGROUND COLORS***** */
+.bg-primary {
+    background: #AF32FF!important;
+    color: white;
+}
+
+.bg-secondary {
+    background: #13FFD5!important;
+    color: #444444;
+}
+
+.bg-success {
+    background: #A7F510!important;
+    color: #444444;
+}
+
+.bg-danger {
+    background: #FF3C80!important;
+    color: white;
+}
+
+.bg-warning {
+    background: #FFEB00!important;
+    color: #444444;
+}
+
+.bg-info {
+    background: #0097CC!important;
+    color: white;
+}
+
+.bg-light {
+    background: #FFFFFF!important;
+    color: #444444;
+}
+
+.bg-dark {
+    background: #444444!important;
+    color: white;
+}
+/* endregion END BACKGROUND COLORS */
+
+/* region *****LIST GROUP ITEMS***** */
+.list-group-item.active {
+    background: #AF32FF;
+    border: 1px solid #13FFD5;
+}
+/* endregion END LIST GROUP ITEMS */
+
+/* region *****TEXT***** */
+.text-primary {
+    color: #AF32FF!important;
+}
+
+.text-secondary {
+    color: #13FFD5!important;
+}
+
+.text-success {
+    color: #A7F510!important;
+}
+
+.text-danger {
+    color: #FF3C80!important;
+}
+
+.text-warning {
+    color: #FFEB00!important;
+}
+
+.text-info {
+    color: #0097CC!important;
+}
+
+.text-light {
+    color: #FFFFFF!important;
+}
+
+.text-dark {
+    color: #444444!important;
+}
+/* endregion END TEXT */
+
+/* region *****BORDERS***** */
+.border-primary {
+    border-color: #AF32FF!important;
+}
+
+.border-secondary {
+    border-color: #13FFD5!important;
+}
+
+.border-success {
+    border-color: #A7F510!important;
+}
+
+.border-danger {
+    border-color: #FF3C80!important;
+}
+
+.border-warning {
+    border-color: #FFEB00!important;
+}
+
+.border-info {
+    border-color: #0097CC!important;
+}
+
+.border-light {
+    border-color: #FFFFFF!important;
+}
+
+.border-dark {
+    border-color: #444444!important;
+}
+/* endregion END BORDERS */
+
+/* region BOOTSTRAP TABLE */
+.bootstrap-table span.card-view-value, .bootstrap-table span.card-view-title {
+    color: #444444!important;
+}
+
+.bootstrap-table td, .bootstrap-table th {
+    background: #F9F9FF;
+}
+
+.bootstrap-table th {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 0;
+    border-right-width: 0;
+    /*border-color: #AF32FF!important;*/
+    height: 35px;
+    line-height: 14px;
+}
+/* endregion */
+
+/* region SWITCHES */
+.primary-switch input:checked + label:before {
+    background: #AF32FF;
+}
+/* TODO switches */
+
+/*  endregion */
+
+/* region CHECKBOXES */
+/* TODO checkboxes images */
+/* endregion */
+
+/* region RADIOS */
+/* TODO radios images */
+/* endregion */
