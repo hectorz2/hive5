@@ -1,0 +1,8 @@
+/**
+ * Author: Héctor Zaragoza Arranz
+ * Date: 24/01/2020
+ */
+.border-1 {
+    border-width: 1px!important;
+    border-style: solid!important;
+}

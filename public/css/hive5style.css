@@ -42,12 +42,24 @@ ul.unordered-list li:before {
 	color: black!important;
 }
 
-.single-input {
+.nice-select {
+    background: white!important;
+}
+
+.nice-select span, .nice-select li {
+    color: #444444!important;
+}
+
+.form-select .nice-select .list .option.selected {
+    font-weight: 800;
+}
+
+.single-input, .single-textarea {
 	background: white;
 	color: black!important;
 }
 
-.single-input::placeholder {
+.single-input::placeholder, .single-textarea::placeholder {
 	color: #A0A0A0!important;
 }
 
@@ -573,17 +585,49 @@ ul.unordered-list li:before {
 /* endregion */
 
 /* region SWITCHES */
-.primary-switch input:checked + label:before {
+.switch.switch-primary input:checked + label:before {
     background: #AF32FF;
 }
-/* TODO switches */
 
+.switch.switch-secondary input:checked + label:before {
+    background: #13FFD5;
+}
+
+.switch.switch-success input:checked + label:before {
+    background: #A7F510;
+}
+
+.switch.switch-danger input:checked + label:before {
+    background: #FF3C80;
+}
+
+.switch.switch-warning input:checked + label:before {
+    background: #FFEB00;
+}
+
+.switch.switch-info input:checked + label:before {
+    background: #0097CC;
+}
+
+.switch.switch-light input:checked + label:before {
+    background: #FFFFFF;
+}
+
+.switch.switch-dark input:checked + label:before {
+    background: #444444;
+}
 /*  endregion */
 
 /* region CHECKBOXES */
+.primary-checkbox input:checked + label {
+    background: url("../img/templateOverwrite/primary-check.png");
+}
 /* TODO checkboxes images */
 /* endregion */
 
 /* region RADIOS */
+.primary-radio input:checked + label {
+    background: url("../img/templateOverwrite/primary-radio.png");
+}
 /* TODO radios images */
 /* endregion */
