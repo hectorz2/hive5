@@ -1,0 +1,33 @@
+{% set label = label is defined ? label : null %}
+{% set icon = icon|default(null) %}
+
+{% if icon is not null %}
+    <div class="input-group-icon mt-10">
+        <div class="icon">
+            <i class="mdi mdi-{{ icon }}" aria-hidden="true"></i>
+        </div>
+{% endif %}
+
+        <div class="form-select">
+            {% if label is not null %}
+                <label for="{{ id }}">{{ label|trans }}</label>
+            {% endif %}
+            <select id="{{ id }}" name="{{ name }}">
+                <option value="null" selected="selected">{% trans %}label.selectValue{% endtrans %}...</option>
+            </select>
+        </div>
+
+{% if icon is not null %}
+    </div>
+{% endif %}
+
+<script>
+    $(document).ready(function () {
+        Select.initialize('{{ id }}', {
+            unSelectOnNull: true
+        });
+    });
+</script>
+
+{% block script %}
+{% endblock %}

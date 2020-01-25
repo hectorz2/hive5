@@ -1,3 +1,5 @@
+/* region GENERAL */
+
 body, section {
     background: #434343!important;
 }
@@ -34,12 +36,20 @@ h6 {
     color: #AF32FF!important;
 }
 
+/* endregion */
+
+/* region LI */
+
 ul.unordered-list li:before {
     border-color: #AF32FF;
 }
 
+/* endregion */
+
+/* region SELECT */
+
 .default-select ul, .default-select ul li, .default-select span {
-	color: black!important;
+    color: black!important;
 }
 
 .nice-select {
@@ -50,18 +60,37 @@ ul.unordered-list li:before {
     color: #444444!important;
 }
 
-.form-select .nice-select .list .option.selected {
+.nice-select .list .option.selected {
     font-weight: 800;
 }
 
+.nice-select .list .option.disabled {
+    color: #D4CBCB!important;
+}
+
+.nice-select .list {
+    height: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* endregion */
+
+/* region INPUT */
+
 .single-input, .single-textarea {
-	background: white;
-	color: black!important;
+    background: white;
+    color: black!important;
 }
 
 .single-input::placeholder, .single-textarea::placeholder {
-	color: #A0A0A0!important;
+    color: #A0A0A0!important;
 }
+
+/* endregion */
+
+
 
 .generic-blockquote {
     border-left: 5px solid #AF32FF;
@@ -72,7 +101,6 @@ ul.unordered-list li:before {
 }
 
 /* TODO header */
-/* TODO all the placeholders */
 
 
 
