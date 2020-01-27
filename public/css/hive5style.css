@@ -619,13 +619,18 @@ ul.unordered-list li:before {
 /*  endregion */
 
 /* region CHECKBOXES */
+.primary-checkbox {
+    border-radius: 4px;
+}
 .primary-checkbox input:checked + label {
     background: url("../img/templateOverwrite/primary-check.png");
 }
-/* TODO checkboxes images */
 /* endregion */
 
 /* region RADIOS */
+.primary-radio {
+    border-radius: 4px;
+}
 .primary-radio input:checked + label {
     background: url("../img/templateOverwrite/primary-radio.png");
 }
