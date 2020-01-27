@@ -1,0 +1,19 @@
+{% extends 'components/select/base.html.twig' %}
+
+{% set id = id is defined ? id : 'languageSelect' %}
+{% set name = name is defined ? name : 'language' %}
+{% set icon = icon is defined ? icon : 'translate' %}
+
+{% block script %}
+    <script>
+        $(document).ready(function () {
+            {# TODO AJAX lib #}
+            $.get('{{ url('getLanguages') }}', function(data) {
+                Select.generateOptions('{{ id }}', data, 'id', 'nativeName');
+            })
+            .fail(function() {
+                alert( 'error' );
+            })
+        });
+    </script>
+{% endblock %}

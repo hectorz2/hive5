@@ -2,11 +2,18 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
+    protected $projectDir;
+
+    public function __construct(KernelInterface $kernel)
+    {
+        $this->projectDir = $kernel->getProjectDir();
+    }
+
     /**
      * @Route("/", name="root")
      */
