@@ -657,7 +657,7 @@ ul.unordered-list li:before {
 
 /* region RADIOS */
 .primary-radio {
-    border-radius: 4px;
+    border-radius: 8px;
 }
 .primary-radio input:checked + label {
     background: url("../img/templateOverwrite/primary-radio.png");
