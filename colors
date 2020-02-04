@@ -1,8 +1,8 @@
-primary: #AF32FF;
+primary: #A336E8;
 secondary: #13FFD5;
 success: #A7F510;
 warning: #FFEB00;
-danger: #FF3C80;
+danger: #EC417D;
 info: #0097CC;
 light: #FFFFFF;
 dark: #444444;
