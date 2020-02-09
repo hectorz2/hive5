@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CityRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\RoleRepository")
  */
-class City
+class Role
 {
     /**
      * @ORM\Id()
@@ -19,18 +19,12 @@ class City
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Country", inversedBy="cities")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $country;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="city")
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="roles")
      */
     private $users;
 
@@ -56,18 +50,6 @@ class City
         return $this;
     }
 
-    public function getCountry(): ?Country
-    {
-        return $this->country;
-    }
-
-    public function setCountry(?Country $country): self
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
     /**
      * @return Collection|User[]
      */
@@ -80,7 +62,7 @@ class City
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
-            $user->setCity($this);
+            $user->addRole($this);
         }
 
         return $this;
@@ -90,10 +72,7 @@ class City
     {
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
-            // set the owning side to null (unless already changed)
-            if ($user->getCity() === $this) {
-                $user->setCity(null);
-            }
+            $user->removeRole($this);
         }
 
         return $this;
