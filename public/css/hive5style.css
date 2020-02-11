@@ -100,8 +100,18 @@ ul.unordered-list li:before {
     color: #444444!important;
 }
 
+/* region *****HEADER***** */
 /* TODO header */
+.header-area .main-header-area.sticky {
+    background: rgba(163, 54, 232, 1);
+}
 
+.header-area .main-header-area .main-menu ul li a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* endregion */
 
 
 /* region *****BUTTONS***** */
