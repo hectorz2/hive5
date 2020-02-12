@@ -1,0 +1,18 @@
+{#
+ * Author: Héctor Zaragoza Arranz
+ * Date: 12/02/2020
+#}
+{% set id = id is defined ? id : 'loginModal' %}
+
+{% set title %}
+    Acceder
+{% endset %}
+{% set content %}
+    formulario login
+{% endset %}
+
+{% set footer %}
+    <button class="btn btn-primary">Acceder</button>
+{% endset %}
+
+{% include 'components/modal/modal.html.twig' with {id: id, title: title, content: content, footer: footer} %}

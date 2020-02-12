@@ -40,7 +40,7 @@ class MainController extends AbstractController
      */
     public function root()
     {
-        return $this->render('base.html.twig');
+        return $this->render('projectSearch/projectSearch.html.twig');
     }
 
     /**

@@ -1,5 +1,49 @@
+.modal {
+    z-index: 1000000;
+}
+
+.pre-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999;
+    background: #434343;
+    transition:.5s ease-in-out;
+
+    animation: pulse 3s infinite;
+    animation-direction: alternate;
+    animation-name: pulse;
+}
+
+.pre-loader .pre-loader-image {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+#mainSection {
+    transition:.5s ease-in-out;
+}
+
 img.logo {
-    width: 206px;
+    width: 162px;
     height: 59px;
 }
 
@@ -60,4 +104,33 @@ img.logo {
 
 .switch input:checked + label:after {
     left: 19px;
+}
+
+input.big-input {
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    width: 100%;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    height: 46px;
+}
+
+input.big-input::placeholder {
+    color: #7A838B;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.nice-select.wide {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    color: #7A838B;
+    font-size: 16px;
+}
+
+.badge.big-badge {
+    padding: 15px;
+    font-size: 14px;
 }

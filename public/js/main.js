@@ -3,7 +3,17 @@
  * Date: 24/01/2020
  */
 $(document).ready(function() {
-    checkInitialHeading();
+    setTimeout(function () {
+        $('.pre-loader').fadeOut(500, function () {
+            // setTimeout(function () {
+            $('#mainSection')
+                .show()
+                .css('opacity', '1');
+            $('body').css('overflow', 'auto');
+            checkInitialHeading();
+            // }, 200)
+        });
+    }, 500);
 });
 
 /**

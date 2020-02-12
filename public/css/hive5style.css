@@ -1,4 +1,11 @@
 /* region GENERAL */
+.modal-backdrop {
+    background: #AAAAAA;
+}
+
+.modal-content {
+    background: #434343;
+}
 
 body, section {
     background: #434343!important;
@@ -103,7 +110,12 @@ ul.unordered-list li:before {
 /* region *****HEADER***** */
 /* TODO header */
 .header-area .main-header-area.sticky {
-    background: rgba(163, 54, 232, 1);
+    background: #434343;
+    border-bottom: 1px solid #A336E8;
+}
+
+.header-area .main-header-area {
+    background: rgba(67, 67, 67, 0.8);
 }
 
 .header-area .main-header-area .main-menu ul li a {
@@ -111,6 +123,13 @@ ul.unordered-list li:before {
     padding-bottom: 15px;
 }
 
+.header-area .main-header-area .main-menu ul li a:hover {
+    color: #13FFD5;
+}
+
+.bradcam_area {
+    background-image: url('../img/top.jpg');
+}
 /* endregion */
 
 
