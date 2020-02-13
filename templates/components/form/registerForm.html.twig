@@ -1,0 +1,30 @@
+{#
+ * Author: Héctor Zaragoza Arranz
+ * Date: 13/02/2020
+#}
+{% set id = id is defined ? id : 'registerForm' %}
+
+<form id="{{ id }}" method="post">
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <label for="registerUsernameInput">Usuario</label>
+            <input type="text" id="registerUsernameInput" name="username" class="form-control" required="required" maxlength="50"/>
+        </div>
+        <div class="col-12 col-sm-6">
+            <label for="registerEmailInput">Email</label>
+            <input type="text" id="registerEmailInput" name="email" class="form-control" required="required"/>
+        </div>
+
+    </div>
+</form>
+
+<script>
+    $(document).ready(function () {
+        Form.initialize('{{ id }}', {
+            submitBtnId: '{{ submitBtn }}',
+            onsubmit: function () {
+                {# TODO #}
+            }
+        });
+    });
+</script>

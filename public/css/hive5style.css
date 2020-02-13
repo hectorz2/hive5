@@ -11,10 +11,13 @@ body, section {
     background: #434343!important;
 }
 
-p, ul, ol, li, span {
+p, ul, ol, li, span, label {
     color: #EEEEEE!important;
 }
 
+a {
+    color: #A336E8;
+}
 /*h1, h2, h3, h4, h5, h6 {*/
 /*    color: white;*/
 /*}*/
@@ -86,12 +89,12 @@ ul.unordered-list li:before {
 
 /* region INPUT */
 
-.single-input, .single-textarea {
+.single-input, .single-textarea, .form-control {
     background: white;
     color: black!important;
 }
 
-.single-input::placeholder, .single-textarea::placeholder {
+.single-input::placeholder, .single-textarea::placeholder, .form-control::placeholder {
     color: #A0A0A0!important;
 }
 
@@ -121,6 +124,7 @@ ul.unordered-list li:before {
 .header-area .main-header-area .main-menu ul li a {
     padding-top: 15px;
     padding-bottom: 15px;
+    color: #EEEEEE;
 }
 
 .header-area .main-header-area .main-menu ul li a:hover {
@@ -583,6 +587,50 @@ ul.unordered-list li:before {
     color: #444444!important;
 }
 /* endregion END TEXT */
+
+/* region LINKS */
+
+a.text-primary:hover {
+    color: #BE26FF!important;
+    text-decoration: underline;
+}
+
+a.text-secondary:hover {
+    color: #63FFD9!important;
+    text-decoration: underline;
+}
+
+a.text-success:hover {
+    color: #B8FF4A!important;
+    text-decoration: underline;
+}
+
+a.text-warning:hover {
+    color: #FFF64B!important;
+    text-decoration: underline;
+}
+
+a.text-danger:hover {
+    color: #FF357E!important;
+    text-decoration: underline;
+}
+
+a.text-info:hover {
+    color: #24ADFF!important;
+    text-decoration: underline;
+}
+
+a.text-light:hover {
+    color: #F5F5F5!important;
+    text-decoration: underline;
+}
+
+a.text-dark:hover {
+    color: #FFFFFF!important;
+    text-decoration: underline;
+}
+
+/* endregion */
 
 /* region *****BORDERS***** */
 .border-primary {

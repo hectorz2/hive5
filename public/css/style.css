@@ -2,6 +2,38 @@
     z-index: 1000000;
 }
 
+.modal-dialog {
+    transition: 0.5s all!important;
+}
+
+.bootstrap-maxlength {
+    z-index: 9999999!important;
+}
+
+.slicknav_btn {
+    top: -43px;
+}
+
+.header-mobile-extra-buttons {
+    margin: auto;
+    padding-right: 75px;
+}
+
+.extra-buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.extra-buttons-container .header-log-in a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.extra-buttons-container .header-log-in {
+    margin-right: 30px;
+}
+
 .pre-loader {
     position: fixed;
     top: 0;
@@ -44,6 +76,11 @@
 
 img.logo {
     width: 162px;
+    height: 59px;
+}
+
+img.mobile-logo {
+    width: 59px;
     height: 59px;
 }
 
@@ -133,4 +170,13 @@ input.big-input::placeholder {
 .badge.big-badge {
     padding: 15px;
     font-size: 14px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    line-height: 40px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
 }

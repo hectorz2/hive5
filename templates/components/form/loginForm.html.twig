@@ -1,0 +1,23 @@
+{#
+ * Author: Héctor Zaragoza Arranz
+ * Date: 13/02/2020
+#}
+{% set id = id is defined ? id : 'loginForm' %}
+
+<form id="{{ id }}" method="post">
+    <label for="usernameOrEmailInput">Nombre de usuario/Email</label>
+    <input type="text" class="form-control" id="usernameOrEmailInput" name="usernameOrEmail" required="required"/>
+    <label for="passwordInput">Contraseña</label>
+    <input type="password" class="form-control" id="passwordInput" name="password" required="required"/>
+</form>
+
+<script>
+    $(document).ready(function () {
+        Form.initialize('{{ id }}', {
+            submitBtnId: '{{ submitBtn }}',
+            onsubmit: function () {
+                {# TODO #}
+            }
+        });
+    });
+</script>

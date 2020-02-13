@@ -5,14 +5,48 @@
 {% set id = id is defined ? id : 'loginModal' %}
 
 {% set title %}
-    Acceder
+    <div id="loginTitle">
+        Acceder
+    </div>
+    <div id="registerTitle">
+        Registro
+    </div>
 {% endset %}
 {% set content %}
-    formulario login
+    {% include 'components/form/loginForm.html.twig' with {submitBtn: 'doLogInBtn'} only %}
+    {% include 'components/form/registerForm.html.twig' with {submitBtn: 'doRegisterBtn'} only %}
+    <script>
+        $(document).ready(function () {
+            LoginModal.initialize();
+        });
+    </script>
 {% endset %}
 
 {% set footer %}
-    <button class="btn btn-primary">Acceder</button>
+    <div id="loginFooter" class="row w-100">
+        <div class="col-6 text-left">
+            <a href="#" class="text-secondary" id="modalRegisterBtn">
+                ¿Aún no estás registrado?
+                <br/>
+                ¿A qué esperas?
+            </a>
+        </div>
+        <div class="col-6 text-right">
+            <button class="btn btn-primary" id="doLogInBtn">Acceder</button>
+        </div>
+    </div>
+    <div id="registerFooter" class="row w-100">
+        <div class="col-6 text-left">
+            <a href="#" class="text-secondary" id="modalLoginBtn">
+                ¿Ya estás registrado?
+                <br/>
+                ¡Haz login!
+            </a>
+        </div>
+        <div class="col-6 text-right">
+            <button class="btn btn-primary" id="doRegisterBtn">Crear usuario</button>
+        </div>
+    </div>
 {% endset %}
 
 {% include 'components/modal/modal.html.twig' with {id: id, title: title, content: content, footer: footer} %}
