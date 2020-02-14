@@ -11,6 +11,7 @@ H5Main = {
         H5Main.handlePreloader();
         H5Main.assignEvents();
         H5Main.handlePlaceholders();
+        H5Main.handleRequiredLabels();
         H5Main.handleDefaults();
         H5Main.Event.handleHeaderExtraButtons();
     },
@@ -63,6 +64,23 @@ H5Main = {
                     let $label = $('label[for="' + id + '"]');
                     if($label.length > 0) {
                         $input.attr('placeholder', $label.text());
+                    }
+                }
+            }
+        });
+    },
+
+    handleRequiredLabels: function() {
+        let $requiredInputs = $('input[required="required"], textarea[required="required"]');
+        $.each($requiredInputs, function(index, input) {
+            let $input = $(input);
+            let id = $input.attr('id');
+            if(id != null) {
+                let $label = $('label[for="' + id + '"]');
+                if($label.length > 0) {
+                    let labelText = $label.text();
+                    if(!labelText.includes('(*)')) {
+                        $label.text(labelText + ' (*)');
                     }
                 }
             }

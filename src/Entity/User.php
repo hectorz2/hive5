@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -39,9 +40,9 @@ class User
     private $lastname;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $age;
+    private $birthDate;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -55,13 +56,13 @@ class User
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Country", inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $country;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\City", inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $city;
 
@@ -135,14 +136,14 @@ class User
         return $this;
     }
 
-    public function getAge(): ?int
+    public function getBirthDate(): ?DateTime
     {
-        return $this->age;
+        return $this->birthDate;
     }
 
-    public function setAge(?int $age): self
+    public function setBirthDate(?DateTime $birthDate): self
     {
-        $this->age = $age;
+        $this->birthDate = $birthDate;
 
         return $this;
     }

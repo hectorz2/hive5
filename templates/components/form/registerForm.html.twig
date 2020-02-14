@@ -12,9 +12,28 @@
         </div>
         <div class="col-12 col-sm-6">
             <label for="registerEmailInput">Email</label>
-            <input type="text" id="registerEmailInput" name="email" class="form-control" required="required"/>
+            <input type="text" id="registerEmailInput" name="email" class="form-control" required="required" />
         </div>
-
+        <div class="col-12 col-sm-6">
+            <label for="registerPasswordInput">Contraseña</label>
+            <input type="password" id="registerPasswordInput" name="password" class="form-control" required="required" />
+        </div>
+        <div class="col-12 col-sm-6">
+            <label for="registerPasswordRepeatInput">Repite tu contraseña</label>
+            <input type="password" id="registerPasswordRepeatInput" class="form-control" required="required" />
+        </div>
+        <div class="col-12 col-sm-6">
+            <label for="registerPasswordRepeatInput">Repite tu contraseña</label>
+            <input type="password" id="registerPasswordRepeatInput" class="form-control" required="required" />
+        </div>
+        <div class="col-12 col-sm-5">
+            <label for="registerFirstnameInput">Nombre</label>
+            <input type="text" id="registerFirstnameInput" name="firstname" class="form-control" required="required" />
+        </div>
+        <div class="col-12 col-sm-7">
+            <label for="registerLastnameInput">Apellidos</label>
+            <input type="text" id="registerLastnameInput" name="lastname" class="form-control" required="required" />
+        </div>
     </div>
 </form>
 
@@ -24,7 +43,8 @@
             submitBtnId: '{{ submitBtn }}',
             onsubmit: function () {
                 {# TODO #}
-            }
+            },
+            {# TODO fields validation #}
         });
     });
 </script>
