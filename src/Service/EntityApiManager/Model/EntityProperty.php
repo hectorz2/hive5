@@ -1,10 +1,9 @@
 <?php
 
+namespace App\Service\EntityApiManager\Model;
 
-namespace App\Service\EntitiApiManager\EntityValidator\Model;
 
-
-use App\Service\EntitiApiManager\EntityValidator\Model\Exception\EntityPropertyUnknownException;
+use App\Service\EntityApiManager\Model\Exception\EntityPropertyUnknownException;
 
 /**
  * Author: Héctor Zaragoza Arranz

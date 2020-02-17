@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller\Rest;
-
 
 use App\Controller\MainController;
 use App\Service\MainControllerServicesManager\MainControllerServicesManager;
@@ -11,10 +9,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 abstract class MainRestController extends MainController
 {
-    protected $pagination;
+    protected bool $pagination;
 
     /** @var ServiceEntityRepository */
-    private $repository;
+    private ServiceEntityRepository $repository;
 
     public function __construct(MainControllerServicesManager $mainControllerServicesManager)
     {

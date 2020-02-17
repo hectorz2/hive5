@@ -1,7 +1,6 @@
 <?php
-namespace App\Service\EntitiApiManager\EntityValidator\Exception;
+namespace App\Service\EntityApiManager\Validator\Exception;
 
-use App\Service\EntitiApiManager\EntityValidator\Model\EntityProperty;
 use Exception;
 
 /**
