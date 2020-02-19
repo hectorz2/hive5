@@ -9,22 +9,22 @@ use Exception;
  */
 class EntityValidationFailedException extends Exception
 {
-    private array $errors;
+    private array $validationErrors;
     /**
      * EntityValidationFailedException constructor.
      * @param array $errors Key/Value array with key as property field and value as array of string errors.
      */
     public function __construct(array $errors)
     {
-        $this->errors = $errors;
-        $message = 'The entity validation failed with errors. Access to them by getErrors method.';
+        $this->validationErrors = $errors;
+        $message = 'The entity validation failed with errors. Access to them by getValidationErrors method.';
         parent::__construct($message);
     }
 
     /**
-     * @return array
+     * @return array key/value array with field as key and array of errors as value.
      */
-    public function getErrors():array {
-        return $this->errors;
+    public function getValidationErrors(): array {
+        return $this->validationErrors;
     }
 }

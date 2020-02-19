@@ -56,6 +56,8 @@ class MainController extends AbstractController
      * @return ServiceEntityRepository
      */
     protected function getRepository($entityClass) {
-        return (ServiceEntityRepository::class)($this->doctrine->getRepository($entityClass));
+        /** @var ServiceEntityRepository $repo */
+        $repo = $this->doctrine->getRepository($entityClass);
+        return $repo;
     }
 }

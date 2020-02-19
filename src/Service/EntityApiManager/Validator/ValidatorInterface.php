@@ -6,6 +6,7 @@ use App\Service\EntityApiManager\Validator\Exception\EntityFieldNotFoundExceptio
 use App\Service\EntityApiManager\Validator\Exception\EntityPropertyKeyNotEqualThanPropertyFieldNameException;
 use App\Service\EntityApiManager\Validator\Exception\EntityValidationFailedException;
 use App\Service\EntityApiManager\Model\Exception\EntityPropertyTypeNotSupportedException;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Author: Héctor Zaragoza Arranz
@@ -16,17 +17,15 @@ interface ValidatorInterface
     /**
      * ValidatorInterface constructor.
      * @param EntityInterface $entity
+     * @param ManagerRegistry $doctrine
      */
-    public function __construct(EntityInterface $entity);
+    public function __construct(EntityInterface $entity, ManagerRegistry $doctrine);
 
     /**
      * Validates the entity data received.
      * @param array $entityData Associative array with the entity data to validate
+     * @param int|null $id in case of update
      * @return bool
-     * @throws EntityFieldNotFoundException
-     * @throws EntityPropertyKeyNotEqualThanPropertyFieldNameException
-     * @throws EntityPropertyTypeNotSupportedException
-     * @throws EntityValidationFailedException
      */
-    public function validate(array $entityData) :bool;
+    public function validate(array $entityData, ?int $id = null) :bool;
 }

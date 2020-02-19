@@ -17,65 +17,72 @@ class User
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $username;
+    private string $username;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $email;
+    private string $password;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $firstname;
+    private string $email;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $lastname;
+    private string $firstname;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private string $lastname;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $birthDate;
+    private ?DateTime $birthDate = null;
 
     /**
+     * The studies in JSON.
      * @ORM\Column(type="text", nullable=true)
      */
-    private $studies;
+    private ?string $studies = null;
 
     /**
+     * The jobs in JSON.
      * @ORM\Column(type="text", nullable=true)
      */
-    private $jobs;
+    private ?string $jobs = null;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Country", inversedBy="users")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $country;
+    private ?Country $country = null;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\City", inversedBy="users")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $city;
+    private ?City $city = null;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Language", inversedBy="users")
      */
-    private $languages;
+    private Collection $languages;
 
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="users")
      */
-    private $roles;
+    private Collection $roles;
 
     public function __construct()
     {
@@ -96,6 +103,18 @@ class User
     public function setUsername(string $username): self
     {
         $this->username = $username;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
 
         return $this;
     }

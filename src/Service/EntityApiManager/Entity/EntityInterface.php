@@ -3,7 +3,8 @@
 namespace App\Service\EntityApiManager\Entity;
 
 use App\Service\EntityApiManager\Model\EntityProperty;
-use App\Service\EntityApiManager\Validator\ValidatorInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Author: Héctor Zaragoza Arranz
@@ -12,9 +13,20 @@ use App\Service\EntityApiManager\Validator\ValidatorInterface;
 interface EntityInterface
 {
     /**
+     * EntityInterface constructor.
+     * @param ManagerRegistry $doctrine
+     */
+    public function __construct(ManagerRegistry $doctrine);
+
+    /**
      * @return string
      */
     public function getEntityClass(): string;
+
+    /**
+     * @return ServiceEntityRepository
+     */
+    public function getRepository(): ServiceEntityRepository;
 
     /**
      * @return EntityProperty[]
@@ -25,4 +37,14 @@ interface EntityInterface
      * @return string
      */
     public function getValidatorClass(): string;
+
+    /**
+     * @return string
+     */
+    public function getFormatterClass(): string;
+
+    /**
+     * @return string
+     */
+    public function getPersisterClass(): string;
 }

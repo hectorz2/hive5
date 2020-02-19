@@ -8,19 +8,15 @@
     <div class="row">
         <div class="col-12 col-sm-6">
             <label for="registerUsernameInput">Usuario</label>
-            <input type="text" id="registerUsernameInput" name="username" class="form-control" required="required" maxlength="50"/>
+            <input type="text" id="registerUsernameInput" name="username" class="form-control" required="required" maxlength="50" value="user"/>
         </div>
         <div class="col-12 col-sm-6">
             <label for="registerEmailInput">Email</label>
-            <input type="text" id="registerEmailInput" name="email" class="form-control" required="required" />
+            <input type="text" id="registerEmailInput" name="email" class="form-control" required="required" value="myemail@mail.com"/>
         </div>
         <div class="col-12 col-sm-6">
             <label for="registerPasswordInput">Contraseña</label>
-            <input type="password" id="registerPasswordInput" name="password" class="form-control" required="required" />
-        </div>
-        <div class="col-12 col-sm-6">
-            <label for="registerPasswordRepeatInput">Repite tu contraseña</label>
-            <input type="password" id="registerPasswordRepeatInput" class="form-control" required="required" />
+            <input type="password" id="registerPasswordInput" name="password" class="form-control" required="required"/>
         </div>
         <div class="col-12 col-sm-6">
             <label for="registerPasswordRepeatInput">Repite tu contraseña</label>
@@ -28,11 +24,11 @@
         </div>
         <div class="col-12 col-sm-5">
             <label for="registerFirstnameInput">Nombre</label>
-            <input type="text" id="registerFirstnameInput" name="firstname" class="form-control" required="required" />
+            <input type="text" id="registerFirstnameInput" name="firstname" class="form-control" required="required" value="pepe"/>
         </div>
         <div class="col-12 col-sm-7">
             <label for="registerLastnameInput">Apellidos</label>
-            <input type="text" id="registerLastnameInput" name="lastname" class="form-control" required="required" />
+            <input type="text" id="registerLastnameInput" name="lastname" class="form-control" required="required" value="gómez"/>
         </div>
     </div>
 </form>
@@ -42,7 +38,28 @@
         Form.initialize('{{ id }}', {
             submitBtnId: '{{ submitBtn }}',
             onsubmit: function () {
-                {# TODO #}
+                let data = {
+                        0: {
+                            username: $('#registerUsernameInput').val(),
+                            email: $('#registerEmailInput').val(),
+                            password: $('#registerPasswordInput').val(),
+                            firstname: $('#registerFirstnameInput').val(),
+                            lastname: $('#registerLastnameInput').val()
+                        }
+                    }
+                ;
+
+                $.ajax({
+                    url: '{{ url('postUsers') }}',
+                    type: 'POST',
+                    dataType: 'JSON',
+                    data: data,
+                    success: function(data) {
+                        console.log(data);
+                    }
+                });
+
+                return false;
             },
             {# TODO fields validation #}
         });

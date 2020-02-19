@@ -3,8 +3,12 @@ namespace App\Service\EntityApiManager;
 
 use App\Service\EntityApiManager\Entity\EntityInterface;
 use App\Service\EntityApiManager\Exception\EntityNotExistException;
+use App\Service\EntityApiManager\Formatter\FormatterInterface;
+use App\Service\EntityApiManager\Persister\PersisterInterface;
+use App\Service\EntityApiManager\Validator\Exception\EntityValidationFailedException;
 use App\Service\EntityApiManager\Validator\ValidatorInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * Author: Héctor Zaragoza Arranz
@@ -23,23 +27,14 @@ class EntityApiManagerService
      * @param int $id
      * @return object
      */
-    protected function getOne(int $id): object {
+    public function getOne(int $id): object {
         //TODO
     }
 
     /**
      * @return object[]
      */
-    protected function getAll(): array {
-        //TODO
-    }
-
-    /**
-     * @param EntityInterface $entity
-     * @param array $data
-     * @return object[]
-     */
-    protected function post(EntityInterface $entity, array $data): array {
+    public function getAll(): array {
         //TODO
     }
 
@@ -47,33 +42,66 @@ class EntityApiManagerService
      * @param EntityInterface $entity
      * @param array $data
      * @return object[]
+     * @throws EntityNotExistException
+     * @throws EntityValidationFailedException
+     * @throws Model\Exception\EntityPropertyTypeNotSupportedException
+     * @throws Persister\Exception\AddMethodNotExistException
+     * @throws Persister\Exception\SetterMethodNotExistException
+     * @throws Validator\Exception\EntityFieldNotFoundException
+     * @throws Validator\Exception\EntityPropertyKeyNotEqualThanPropertyFieldNameException
      */
-    protected function put(EntityInterface $entity, array $data): array {
-        //TODO
+    public function post(EntityInterface $entity, array $data): array {
+        return $this->postOrPut($entity, $data);
+    }
+
+    /**
+     * @param EntityInterface $entity
+     * @param array $data
+     * @return object[]
+     * @throws EntityNotExistException
+     * @throws EntityValidationFailedException
+     * @throws Model\Exception\EntityPropertyTypeNotSupportedException
+     * @throws Persister\Exception\AddMethodNotExistException
+     * @throws Persister\Exception\SetterMethodNotExistException
+     * @throws Validator\Exception\EntityFieldNotFoundException
+     * @throws Validator\Exception\EntityPropertyKeyNotEqualThanPropertyFieldNameException
+     */
+    public function put(EntityInterface $entity, array $data): array {
+        return $this->postOrPut($entity, $data);
     }
 
     /**
      * @param int $id
      */
-    protected function delete(int $id) {
+    public function delete(int $id) {
         //TODO
     }
 
     /**
      * @param EntityInterface $entity
      * @param array $data
+     * @return array
      * @throws EntityNotExistException
      * @throws Model\Exception\EntityPropertyTypeNotSupportedException
+     * @throws Persister\Exception\AddMethodNotExistException
+     * @throws Persister\Exception\SetterMethodNotExistException
      * @throws Validator\Exception\EntityFieldNotFoundException
      * @throws Validator\Exception\EntityPropertyKeyNotEqualThanPropertyFieldNameException
-     * @throws Validator\Exception\EntityValidationFailedException
+     * @throws EntityValidationFailedException
      */
-    private function postOrPut(EntityInterface $entity, array $data) {
-        $entityValidatorClass = $entity->getValidator();
-        /** @var ValidatorInterface $entityValidator */
-        $entityValidator = new $entityValidatorClass();
+    private function postOrPut(EntityInterface $entity, array $data): array {
+        $entityValidatorClass = $entity->getValidatorClass();
+        $entityFormatterClass = $entity->getFormatterClass();
+        $entityPersisterClass = $entity->getPersisterClass();
 
-        $entityClass = $entity->getEntityClass();
+        /** @var ValidatorInterface $entityValidator */
+        $entityValidator = new $entityValidatorClass($entity, $this->doctrine);
+        /** @var FormatterInterface $entityFormatter */
+        $entityFormatter = new $entityFormatterClass($entity, $this->doctrine);
+        /** @var PersisterInterface $entityPersister */
+        $entityPersister = new $entityPersisterClass($entity, $this->doctrine);
+
+        $entities = [];
         foreach ($data as $entityData) {
             $id = null;
             if(isset($entityData['id'])) {
@@ -82,18 +110,16 @@ class EntityApiManagerService
             }
 
             $entityValidator->validate($entityData);
+            $formattedEntityData = $entityFormatter->formatToEntity($entityData);
+            $entity = $entityPersister->persist($formattedEntityData, $id);
 
-            $entity = null;
             if($id == null) {
-                $entity = new $entityClass();
+                $entities[] = $entity;
             } else {
-                $entity = $this->doctrine->getRepository($entityClass)->find($id);
-                if($entity == null) {
-                    throw new EntityNotExistException($id, $entityClass);
-                }
+                $entities[$id]= $entity;
             }
-
-
         }
+
+        return $entities;
     }
 }
