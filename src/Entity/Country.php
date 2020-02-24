@@ -16,27 +16,27 @@ class Country
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $englishName;
+    private string $englishName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nativeName;
+    private string $nativeName;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\City", mappedBy="country", orphanRemoval=true)
      */
-    private $cities;
+    private Collection $cities;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="country")
      */
-    private $users;
+    private Collection $users;
 
     public function __construct()
     {

@@ -16,27 +16,27 @@ class Language
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $englishName;
+    private string $englishName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nativeName;
+    private string $nativeName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $isoCode;
+    private string $isoCode;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="languages")
      */
-    private $users;
+    private Collection $users;
 
     public function __construct()
     {

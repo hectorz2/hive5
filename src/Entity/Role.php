@@ -16,17 +16,17 @@ class Role
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="roles")
      */
-    private $users;
+    private Collection $users;
 
     public function __construct()
     {

@@ -16,23 +16,23 @@ class City
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Country", inversedBy="cities")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $country;
+    private Country $country;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="city")
      */
-    private $users;
+    private Collection $users;
 
     public function __construct()
     {
